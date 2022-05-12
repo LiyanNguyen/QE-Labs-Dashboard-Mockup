@@ -1,12 +1,13 @@
 let MobileMenuToggle = document.querySelector<HTMLImageElement>("#MobileMenuToggle")!;
 let overLayLayer = document.querySelector<HTMLDivElement>("#overlay")!;
 let sideBar = document.querySelector<HTMLElement>("aside")!;
+let sideBarMenus = document.querySelectorAll<HTMLAnchorElement>("aside ul li a")!;
 let chart1 = document.querySelector<HTMLCanvasElement>("#chart1")!;
 let chart2 = document.querySelector<HTMLCanvasElement>("#chart2")!;
 let chart3 = document.querySelector<HTMLCanvasElement>("#chart3")!;
 let sideBarIsOpen = false;
 
-MobileMenuToggle.onclick = () => {
+const ToggleMobileMenu = () => {
 	sideBar.classList.toggle("isOpen")
 	overLayLayer.classList.toggle("isActive");
 
@@ -18,6 +19,11 @@ MobileMenuToggle.onclick = () => {
 		MobileMenuToggle.src = "images/hamburger.png";
 	}
 }
+
+MobileMenuToggle.onclick = ToggleMobileMenu;
+sideBarMenus.forEach((menu) => {
+	menu.onclick = ToggleMobileMenu;
+});
 
 //THIS SECTION USES EXTERNAL LIBRARY CALLED "CHART.JS"
 //chartJS data for chart1

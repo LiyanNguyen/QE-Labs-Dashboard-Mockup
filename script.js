@@ -2,11 +2,12 @@
 let MobileMenuToggle = document.querySelector("#MobileMenuToggle");
 let overLayLayer = document.querySelector("#overlay");
 let sideBar = document.querySelector("aside");
+let sideBarMenus = document.querySelectorAll("aside ul li a");
 let chart1 = document.querySelector("#chart1");
 let chart2 = document.querySelector("#chart2");
 let chart3 = document.querySelector("#chart3");
 let sideBarIsOpen = false;
-MobileMenuToggle.onclick = () => {
+const ToggleMobileMenu = () => {
     sideBar.classList.toggle("isOpen");
     overLayLayer.classList.toggle("isActive");
     sideBarIsOpen = !sideBarIsOpen;
@@ -17,6 +18,10 @@ MobileMenuToggle.onclick = () => {
         MobileMenuToggle.src = "images/hamburger.png";
     }
 };
+MobileMenuToggle.onclick = ToggleMobileMenu;
+sideBarMenus.forEach((menu) => {
+    menu.onclick = ToggleMobileMenu;
+});
 const chart1Data = {
     labels: ["Data1", "Data2", "Data3", "Data4"],
     datasets: [
