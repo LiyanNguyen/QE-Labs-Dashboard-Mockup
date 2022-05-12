@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+@mainColor: hsl(225, 69%, 59%);
+@secondaryColor: hsl(225, 40%, 96%);
+@navigationHeight: 6rem;
+@asideWidth: 18rem;
+
+:root {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10px;
+	scroll-padding-top: @navigationHeight;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+#overlay {
+	position: fixed;
+	display: none;
+	height: 100vh;
+	width: 100vw;
+	background-color: black;
+	opacity: 0.5;
+
+	&.isActive {
+		display: block;
+
+		@media screen and (min-width: 1220px) {
+			display: none;
+		}
+	}
+}
+
+main {
+	min-height: 100vh;
+	background-color: @secondaryColor;
+	padding-left: @asideWidth;
+	padding-top: @navigationHeight;
+
+	@media screen and (max-width: 1220px) {
+		padding-left: initial;
+	}
+
+	article:not(#overView) {
+		min-height: 100vh;
+		padding: 2rem;
+		
+		@media screen and (max-width: 1220px) {
+			width: 100%;
+		}
+
+		h1 {
+			font-size: 2rem;
+			text-align: center;
+			padding-top: 1rem;
+			padding-bottom: 3rem;
+		}
+
+		.cardContainer {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 2rem;
+
+			@media screen and (max-width: 1220px) {
+				flex-direction: column;
+			}
+		}
+
+		.card {
+			padding: 2rem;
+			width: 49%;
+			background-color: white;
+			display: flex;
+			gap: 2rem;
+			border-radius: .5rem;
+
+			@media screen and (max-width: 1220px) {
+				width: 100%;
+			}
+
+			@media screen and (max-width: 450px) {
+				flex-direction: column;
+
+				.imgContainer {
+					display: flex;
+					justify-content: center;
+				}
+
+				img {
+					width: 50%;
+				}
+			}
+
+			.cardText {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				gap: 1.5rem;
+
+				h2 {
+					font-size: 1.6rem;
+					text-align: center;
+				}
+
+				.attributeContainer {
+					display: flex;
+					flex-direction: column;
+					gap: .5rem;
+
+					.attribute {
+						font-size: 1.4rem;
+						display: flex;
+						justify-content: space-between;
+					}
+
+					.progress {
+						height: .8rem;
+						background-color: darken(@secondaryColor, 3%) ;
+						border-radius: .3rem;
+
+						.progressValue {
+							height: inherit;
+							border-radius: inherit;
+						}
+					}
+				}
+
+				.description {
+					font-size: 1.4rem;
+				}
+			}
+		}
+
+		.bigCard {
+			padding: 2rem;
+			width: 100%;
+			background-color: white;
+			gap: 2rem;
+			border-radius: .5rem;
+		}
+
+		.chartContainer {
+			width: 100%;
+			height: 35rem;
+
+			@media screen and (max-width: 1220px) {
+				height: 25rem;
+			}
+		}
+
+		table {
+			width: 100%;
+			font-size: 1.4rem;
+			text-align: center;
+
+			td {
+				padding-block: 1rem;
+				border-bottom: .1rem solid gray;
+			}
+
+			th {
+				padding-block: 1rem;
+				background-color: darken(@secondaryColor, 3%);
+			}
+		}
+	}
+}
+
+nav {
+	height: @navigationHeight;
+	width: 100%;
+	background-color: @mainColor;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	padding-inline: 3rem;
+	z-index: 1;
+
+	@media screen and (max-width: 1220px) {
+		justify-content: space-between;
+	}
+
+	img {
+		height: 50%;
+	}
+
+	#MobileMenuToggle {
+		display: none;
+		cursor: pointer;
+
+		@media screen and (max-width: 1220px) {
+			display: block;
+			height: 25%;
+		}
+	}
+}
+
+aside {
+	padding-top: @navigationHeight;
+	background-color: white;
+	width: @asideWidth;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	font-size: 1.6rem;
+	box-shadow: 0 0 2rem 1px rgba(0, 0, 0, 0.1);
+	position: fixed;
+	transition: 0.3s ease;
+	left: 0;
+
+	@media screen and (max-width: 1220px) {
+		left: -22rem;
+	}
+
+	ul {
+		padding-block: 2rem;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		li {
+			width: max-content;
+			display: flex;
+			flex-direction: column;
+			gap: .5rem;
+			transition: 0.3s;
+
+			a {
+				color: gray;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+			&::after {
+				content: '';
+				background-color: transparent;
+				width: 0%;
+				height: .2rem;
+				transition: 0.3s;
+			}
+
+			&:hover,
+			&.active {
+				a {
+					color: black;
+				}
+
+				&::after {
+					width: 100%;
+					background-color: @mainColor;
+				}
+			}
+
+			
+		}
+	}
+}
+
+aside.isOpen {
+	left: 0;
+}
+
+#assessment {
+	.card {
+		flex-direction: column;
+
+		h2 {
+			text-align: center;
+		}
+
+		h3,p {
+			font-size: 1.4rem;
+		}
+
+		.cardBody {
+			display: flex;
+			justify-content: space-between;
+	
+			ul {
+				list-style: none;
+				font-size: 1.4rem;
+				display: flex;
+				flex-direction: column;
+				gap: 1.5rem;
+			}
+		}
+	}
+}

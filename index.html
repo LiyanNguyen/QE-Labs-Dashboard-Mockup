@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>QE Dashboard</title>
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="style.css">
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- ChartJS -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<div id="overlay"></div>
+	<header>
+		<nav>
+			<img src="images/logo.png" alt="quantified energy labs logo">
+			<img id="MobileMenuToggle" src="images/hamburger.png" alt="hamburger menu icon">
+		</nav>
+	</header>
+	<aside id="sideBar">
+		<ul>
+			<li><span><a href="#overView"><i class="fa-solid fa-solar-panel"></i>&nbsp;Overview</a></span></li>
+			<li><span><a href="#systemView"><i class="fa-solid fa-map-location-dot"></i>&nbsp;System View</a></span></li>
+			<li><span><a href="#analysis"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;Analysis</a></li>
+			<li><span><a href="#assessment"><i class="fa-solid fa-rectangle-list"></i>&nbsp;Assessment</a></li>
+		</ul>
+	</aside>
+	<main>
+		<!-- This objects and data should be fetched via back-end, this is just for the sake of demonstration -->
+		<article id="overView">
+			<div style="width: 100%; height: 100vh">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d919.9699713938537!2d144.18551882920167!3d-20.854827999130773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3d5aa4507ce2be6a!2zMjDCsDUxJzE3LjQiUyAxNDTCsDExJzA5LjgiRQ!5e1!3m2!1sen!2ssg!4v1652165073982!5m2!1sen!2ssg" width="100%" height="100%" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</article>
+		<article id="systemView">
+			<h1><i class="fa-solid fa-map-location-dot"></i>&nbsp;System View</h1>
+			<div class="cardContainer">
+				<div class="card">
+					<div class="imgContainer">
+						<img src="images/VI.png" alt="">
+					</div>
+					<div class="cardText">
+						<h2>Visual (VI)</h2>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-notes-medical"></i> Attribute</p>
+								<span>72%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 72%; background-color: green;"></div>
+							</div>
+						</div>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-bolt"></i> Attribute</p>
+								<span>84%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 84%; background-color: gold;"></div>
+							</div>
+						</div>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-fire"></i> Attribute</p>
+								<span>15%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 15%; background-color: orange;"></div>
+							</div>
+						</div>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-triangle-exclamation"></i> Attribute</p>
+								<span>5%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 5%; background-color: orangered;"></div>
+							</div>
+						</div>
+						<p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum numquam unde dolor similique ea. Labore incidunt deleniti, eum quas magnam quam adipisci alias, suscipit quaerat reprehenderit repellat, asperiores voluptatem quia.</p>
+					</div>
+				</div>
+				<div class="card">
+					<div class="imgContainer">
+						<img src="images/UVF.png" alt="">
+					</div>
+					<div class="cardText">
+						<h2>Ultraviolet fluorescence (UV-FL)</h2>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-diamond-turn-right"></i> Attribute</p>
+								<span>58%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 58%; background-color: lightblue;"></div>
+							</div>
+						</div>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-cubes"></i> Attribute</p>
+								<span>46%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 46%; background-color: lightgray;"></div>
+							</div>
+						</div>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-screwdriver-wrench"></i> Attribute</p>
+								<span>8%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 8%; background-color: yellowgreen;"></div>
+							</div>
+						</div>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-house-crack"></i> Attribute</p>
+								<span>25%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 25%; background-color: orangered;"></div>
+							</div>
+						</div>
+						<p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum numquam unde dolor similique ea. Labore incidunt deleniti, eum quas magnam quam adipisci alias, suscipit quaerat reprehenderit repellat, asperiores voluptatem quia.</p>
+					</div>
+				</div>
+				<div class="card">
+					<div class="imgContainer">
+						<img src="images/EL.png" alt="">
+					</div>
+					<div class="cardText">
+						<h2>Electroluminescence (EL)</h2>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-sun"></i> Attribute</p>
+								<span>85%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 85%; background-color: orange;"></div>
+							</div>
+						</div>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-plug-circle-exclamation"></i> Attribute</p>
+								<span>46%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 46%; background-color: tomato;"></div>
+							</div>
+						</div>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-object-ungroup"></i> Attribute</p>
+								<span>16%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 16%; background-color: peru;"></div>
+							</div>
+						</div>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-house-crack"></i> Attribute</p>
+								<span>25%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 25%; background-color: orangered;"></div>
+							</div>
+						</div>
+						<p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum numquam unde dolor similique ea. Labore incidunt deleniti, eum quas magnam quam adipisci alias, suscipit quaerat reprehenderit repellat, asperiores voluptatem quia.</p>
+					</div>
+				</div>
+				<div class="card">
+					<div class="imgContainer">
+						<img src="images/IR.png" alt="">
+					</div>
+					<div class="cardText">
+						<h2>Infrared (IR)</h2>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-atom"></i> Attribute</p>
+								<span>17%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 17%; background-color: palevioletred;"></div>
+							</div>
+						</div>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-temperature-arrow-up"></i> Attribute</p>
+								<span>47%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 47%; background-color: orange;"></div>
+							</div>
+						</div>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-temperature-half"></i> Attribute</p>
+								<span>18%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 18%; background-color: gold;"></div>
+							</div>
+						</div>
+						<div class="attributeContainer">
+							<div class="attribute">
+								<p><i class="fa-solid fa-temperature-arrow-down"></i> Attribute</p>
+								<span>5%</span>
+							</div>
+							<div class="progress">
+								<div class="progressValue" style="width: 5%; background-color: yellowgreen;"></div>
+							</div>
+						</div>
+						<p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum numquam unde dolor similique ea. Labore incidunt deleniti, eum quas magnam quam adipisci alias, suscipit quaerat reprehenderit repellat, asperiores voluptatem quia.</p>
+					</div>
+				</div>
+			</div>
+		</article>
+		<article id="analysis">
+			<h1><i class="fa-solid fa-magnifying-glass"></i>&nbsp;Analysis</h1>
+			<div class="cardContainer">
+				<div class="card">
+					<div class="chartContainer">
+						<canvas id="chart1"></canvas>
+					</div>
+				</div>
+				<div class="card">
+					<div class="chartContainer">
+						<canvas id="chart2"></canvas>
+					</div>
+				</div>
+				<div class="bigCard">
+					<div class="chartContainer">
+						<canvas id="chart3"></canvas>
+					</div>
+				</div>
+			</div>
+		</article>
+		<article id="assessment">
+			<h1><i class="fa-solid fa-rectangle-list"></i>&nbsp;Assessment</h1>
+			<div class="cardContainer">
+				<div class="bigCard">
+					<table>
+						<thead>
+							<tr>
+								<th>Category 1</th>
+								<th>Category 2</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Lorem, ipsum dolor.</td>
+								<td>Lorem, ipsum dolor.</td>
+							</tr>
+							<tr>
+								<td>Lorem, ipsum dolor.</td>
+								<td>Lorem, ipsum dolor.</td>
+							</tr>
+							<tr>
+								<td>Lorem, ipsum dolor.</td>
+								<td>Lorem, ipsum dolor.</td>
+							</tr>
+							<tr>
+								<td>Lorem, ipsum dolor.</td>
+								<td>Lorem, ipsum dolor.</td>
+							</tr>
+							<tr>
+								<td>Lorem, ipsum dolor.</td>
+								<td>Lorem, ipsum dolor.</td>
+							</tr>
+							<tr>
+								<td>Lorem, ipsum dolor.</td>
+								<td>Lorem, ipsum dolor.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="card">
+					<h2><i class="fa-solid fa-list-check"></i> Check List</h2>
+					<hr>
+					<div class="cardBody">
+						<ul>
+							<li><i class="fa-solid fa-check" style="color: green;"></i>&nbsp;Lorem, ipsum dolor.</li>
+							<li><i class="fa-solid fa-check" style="color: green;"></i>&nbsp;Lorem, ipsum dolor.</li>
+							<li><i class="fa-solid fa-check" style="color: green;"></i>&nbsp;Lorem, ipsum dolor.</li>
+							<li><i class="fa-solid fa-check" style="color: green;"></i>&nbsp;Lorem, ipsum dolor.</li>
+						</ul>
+						<ul>
+							<li><i class="fa-solid fa-xmark" style="color: red;"></i>&nbsp;Lorem, ipsum dolor.</li>
+							<li><i class="fa-solid fa-xmark" style="color: red;"></i>&nbsp;Lorem, ipsum dolor.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card">
+					<h2><i class="fa-solid fa-wrench"></i> Solutions</h2>
+					<hr>
+					<h3>Lorem, ipsum dolor.</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fugit ratione voluptates dignissimos vel totam voluptatibus labore. Totam vero iusto consequuntur nihil rem quisquam minima accusantium quis neque reiciendis? Adipisci.</p>
+					<h3>Lorem, ipsum dolor.</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fugit ratione voluptates dignissimos vel totam voluptatibus labore. Totam vero iusto consequuntur nihil rem quisquam minima accusantium quis neque reiciendis? Adipisci.</p>
+				</div>
+			</div>
+		</article>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>
