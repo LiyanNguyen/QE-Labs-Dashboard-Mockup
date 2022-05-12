@@ -32,3 +32,5 @@ A dashboard mockup design consisting of 4 sections:
 ![image](https://user-images.githubusercontent.com/50958126/168079748-e6ac3f1c-9e19-4a3a-b624-2d095daece90.png)
 ![image](https://user-images.githubusercontent.com/50958126/168079904-3ec7f31f-a669-46b0-a0b3-4b8381023c20.png)
 ![image](https://user-images.githubusercontent.com/50958126/168080061-4f9484c0-054d-4da9-a61a-669d4ba8e206.png)
+![image](https://user-images.githubusercontent.com/50958126/168080560-b47d1d87-02e1-4028-a3c0-a2d6ff8f5607.png)
+
