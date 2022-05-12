@@ -1,9 +1,13 @@
 # QE Labs Dashboard Mockup Design
 A dashboard mockup design consisting of 4 sections:
+
 1. **Overview**
 2. **System View**
 3. **Analysis**
 4. **Assessment**
+
+## Live Demo
+https://liyannguyen.github.io/QE-Labs-Dashboard-Mockup
 
 ## Built With
 - Semantic HTML5 Markup
